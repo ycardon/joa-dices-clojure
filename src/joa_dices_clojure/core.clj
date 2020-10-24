@@ -1,5 +1,6 @@
 (ns joa-dices-clojure.core
-  (:require [joa-dices-clojure.dice :as dice]))
+  (:require (joa-dices-clojure [dice :as dice]
+                               [parser :as parser])))
 
 (defn count-face
   "count the number of a given face in a roll"
@@ -43,6 +44,11 @@
        :result (frequencies (apply-counter attack counter))}
       (frequencies attack))))
 
+(defn main []
+  (apply fight (parser/parse (second *command-line-args*))))
+
+
+
 (comment
   (dice/rolln 1 dice/black-dice)
   (cancel :push (cancel :kill [(dice/rolln 3 dice/black-dice) 3]))
@@ -50,5 +56,6 @@
   (apply-counter (dice/rolln 10 dice/red-dice) (dice/rolln 10 dice/black-dice))
   (dice/roll-dices [[1 dice/black-dice] [2 dice/red-dice]])
   (frequencies' (apply-counter (dice/rolln 100 dice/red-dice) (dice/rolln 80 dice/black-dice)))
-  (frequencies [:kill :kill :push :blank]))
+  (frequencies [:kill :kill :push :blank])
+  (apply fight (parser/parse "14R - 10B")))
 
