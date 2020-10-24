@@ -7,11 +7,12 @@
 
 ; cancel roll faces by an amount of shield count
 (defn cancel [face [roll shield-count]]
-  (defn f [[r s] cur]
-    (if (and (= cur face) (> s 0))
-      [r (dec s)]
-      [(conj r cur) s]))
-  (reduce f [[] shield-count] roll))
+  (reduce (fn [[r s] cur]
+            (if (and (= cur face) (> s 0))
+              [r (dec s)]
+              [(conj r cur) s]))
+          [[] shield-count]
+          roll))
 
 ; apply counter shields on the attack and remove unrelevant faces from the attack
 (defn apply-counter [attack counter]
@@ -47,4 +48,3 @@
   (frequencies' (apply-counter (dice/rolln 100 dice/red-dice) (dice/rolln 80 dice/black-dice)))
   (frequencies [:kill :kill :push :blank])
   (fight [[100 dice/red-dice]] [[80 dice/black-dice]] true)
-  (apply-counter [:kill :kill :push :blank] [:shield :shield]))
