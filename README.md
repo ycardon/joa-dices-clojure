@@ -1,22 +1,10 @@
 # joa-dices-clojure
 
-A Clojure library designed to ... well, that part is up to you.
+Partial rewrite of the TypeScript project `JoA Dice` in Clojure
 
-## Usage
-
-FIXME
-
-## License
-
-Copyright © 2020 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+This is the 5th edition of my language exploration project
+- [Typescript](https://github.com/ycardon/joa-dices) (original)
+- [Rescript](https://github.com/ycardon/joa-dices-rescript)
+- [Haskell](https://github.com/ycardon/joa-dices-haskell)
+- [Rust](https://github.com/ycardon/joa-dices-rust)
+- [Clojure](https://github.com/ycardon/joa-dices-clojure) (this one)
