@@ -11,7 +11,4 @@
 (defn rolln [n dice] (repeatedly n #(roll1 dice)))
 (defn roll-dices [dices] (mapcat (partial apply rolln) dices))
 
-
-
-(comment
-  (def faces? #{:kill :disrupt :push :shield :blank :trample :death :rally :relayedRally}))
+;; (def faces? #{:kill :disrupt :push :shield :blank :trample :death :rally :relayedRally})

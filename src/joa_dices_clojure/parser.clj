@@ -26,11 +26,11 @@
   [command]
   (reduce (fn [[a, d, d?] cur]
             (if (= cur "-")
-              [a, d, true]                          ; switch to defense mode
+              [a, d, true]                           ; switch to defense mode
               (let [dice (parse-dice (last cur))
                     n (parse-number (str/join (butlast cur)))]
                 (if (= dice :none)
-                  [a, d, d?]                        ; parse error, do nothing
+                  [a, d, d?]                         ; parse error, do nothing
                   (if d?
                     [a, (conj d [n dice]), d?]       ; add the dice to defense
                     [(conj a [n dice]), d, d?])))))  ; add the dice to attack

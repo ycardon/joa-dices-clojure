@@ -59,3 +59,6 @@
   (frequencies [:kill :kill :push :blank])
   (apply fight (parser/parse "14R - 10B")))
 
+;; Calva commands
+;;   - ctrl+alt+c ctrl+alt+j : load script in repl
+;;   - ctrl+enter            : evaluate expression at cursor position
